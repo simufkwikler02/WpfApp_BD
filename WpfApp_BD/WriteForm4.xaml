@@ -1,0 +1,81 @@
+﻿<Window x:Class="WpfApp_BD.WriteForm4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_BD"
+        mc:Ignorable="d"
+        Title="WriteForm4" Height="520" Width="620" WindowStyle="None" VerticalContentAlignment="Top" WindowStartupLocation="CenterScreen" Loaded="WriteForm4_Load">
+    <Grid x:Name="grid2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="35*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#FF828282" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.ColumnSpan="2" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <Grid>
+                    <Button Width="55" Height="55" HorizontalAlignment="Right" Click="closeButton">
+                        <Button.Background>
+                            <ImageBrush Stretch="None"/>
+                        </Button.Background>
+                        <Image Source="/image/closeButton.png"></Image>
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
+                        </Button.Effect>
+                    </Button>
+                    <Button  Width="55" Height="55" HorizontalAlignment="Left" Click="backButton">
+                        <Button.Background>
+                            <ImageBrush Stretch="None"/>
+                        </Button.Background>
+                        <Image Source="/image/backArrow.png"></Image>
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="0"/>
+                        </Button.Effect>
+                    </Button>
+                </Grid>
+                <Label x:Name="label" Content="БАЗА ДАННЫХ &quot;СТОЛОВАЯ&quot;" Background="{x:Null}" RenderTransformOrigin="0.461,2.291" FontSize="26" FontFamily="Comic Sans MS" FontWeight="Normal" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0"/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+                <Label x:Name="label2" Content="ЗАПИСЬ ЗАКАЗА" Background="{x:Null}" RenderTransformOrigin="0.461,2.291" FontSize="26" FontFamily="Comic Sans MS" FontWeight="Normal" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch">
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0"/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
+            </StackPanel>
+        </Border>
+        <TextBlock HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Сумма заказа" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Номер &#xa;транзакции" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Оператор" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="18"/>
+        <TextBox x:Name="textBoxSumPrice" Grid.Row="1" Grid.Column="0" Margin="0,0,20,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalAlignment="Right" Height="25"/>
+        <TextBox x:Name="textBoxTransaction" Grid.Row="2" Grid.Column="0" Margin="0,0,20,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" HorizontalAlignment="Right" Height="25"/>
+        <ComboBox x:Name="ComboBoxOperator" Grid.Row="3" Grid.Column="0" Margin="0,0,20,0" VerticalAlignment="Center" Width="120" HorizontalAlignment="Right" Height="25"/>
+        <Button Grid.Column="1" Content="Добавить заказ" Margin="50,0,50,00" HorizontalAlignment="Stretch" Grid.Row="4" VerticalAlignment="Stretch" FontSize="18" FontFamily="Comic Sans MS" Click="AddOrder"/>
+    </Grid>
+</Window>
